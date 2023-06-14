@@ -11,12 +11,12 @@ from pymol import cmd
 
 RENDER_OPTIONS = {
     "default": {
-        "bg_color": "white",
         "ray_opaque_background": "off",
         "antialias": 2,
         "orthoscopic": "on",
         "depth_cue": "0",
         "ray_trace_mode": "1",
+        "ray_trace_color": "black",
     },
     "default_bw": {
         "bg_color": "white",
@@ -27,7 +27,6 @@ RENDER_OPTIONS = {
         "ray_trace_mode": "2",
     },
     "default_cartoon": {
-        "bg_color": "white",
         "ray_opaque_background": "off",
         "antialias": 2,
         "orthoscopic": "on",
@@ -36,13 +35,14 @@ RENDER_OPTIONS = {
     },
     "dark": {
         "bg_color": "black",
-        "ray_opaque_background": "off",
+        "ray_opaque_background": "on",
         "antialias": 2,
         "orthoscopic": "on",
         "light_count": "2",
         "specular": "1",
         "depth_cue": "0",
         "ray_trace_mode": "1",
+        "ray_trace_color": "black",
     },
     "muted": {
         "bg_color": "white",
@@ -182,7 +182,8 @@ if __name__ == "__main__":
     parser.add_argument('--ligand_zoom', type=float, default=10, help='zoom for ligand, (e.g., 10 is zoomed out a bit)')
     parser.add_argument('--ligand_color', type=str, default=None, help='ligand color (e.g., red or 250,50,50)')
     parser.add_argument('--show_water', action='store_true', help='show water molecules')
-    parser.add_argument('--render_style', type=str, default="default", help=f'render style: ({",".join(RENDER_OPTIONS.keys())}) or custom \'{"ray_trace_mode":3}\'')
+    parser.add_argument('--render_style', type=str, default="default", help=f'render style: ({",".join(RENDER_OPTIONS.keys())})')
+    #parser.add_argument('--render_style_custom', type=str, default=None, help=f'gets added to render_style, e.g., \'{"bg_color":"red"}\'')
     parser.add_argument('--width', type=str, default=1600, help='resolution width')
     parser.add_argument('--height', type=str, default=1600, help='resolution height')
 
