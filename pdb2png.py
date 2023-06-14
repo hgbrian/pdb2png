@@ -89,20 +89,21 @@ def apply_render_style(render_style:str) -> None:
             cmd.set(k, v)
 
 
-def visualize_pdb(pdb_file:str, 
-                  protein_rotate:tuple[float, float, float]|None=None,
-                  protein_color:tuple[float, float, float]|str|None=None,
-                  protein_zoom:float|None=None,
-                  hetatm_color:tuple[float, float, float]|str|None=None,
-                  ligand_id:str|None=None,
-                  ligand_chain:str|None=None,
-                  ligand_zoom:float=1.0, 
-                  ligand_color:tuple[float, float, float]|str|None="red",
-                  show_water:bool=False,
-                  render_style:str="default",
-                  width:int=1600,
-                  height:int=1600) -> str:
-    """Input is a pdb file.
+def pdb2png(pdb_file:str, 
+            protein_rotate:tuple[float, float, float]|None=None,
+            protein_color:tuple[float, float, float]|str|None=None,
+            protein_zoom:float|None=None,
+            hetatm_color:tuple[float, float, float]|str|None=None,
+            ligand_id:str|None=None,
+            ligand_chain:str|None=None,
+            ligand_zoom:float=1.0, 
+            ligand_color:tuple[float, float, float]|str|None="red",
+            show_water:bool=False,
+            render_style:str="default",
+            width:int=1600,
+            height:int=1600) -> str:
+    """
+    Input is a pdb file.
     Output is a png file.
     """
     cmd.reinitialize()
@@ -197,16 +198,16 @@ if __name__ == "__main__":
         else:
             return None
 
-    visualize_pdb(args.pdb_file,
-                  protein_rotate = args.protein_rotate.split(',') if args.protein_rotate else None,
-                  protein_color = _color_to_tuple(args.protein_color),
-                  protein_zoom = args.protein_zoom,
-                  hetatm_color = _color_to_tuple(args.hetatm_color),
-                  ligand_id = args.ligand_id,
-                  ligand_chain = args.ligand_chain,
-                  ligand_zoom = args.ligand_zoom,
-                  ligand_color = _color_to_tuple(args.ligand_color),
-                  show_water = args.show_water,
-                  render_style = args.render_style,
-                  width = args.width,
-                  height = args.height)
+    pdb2png(args.pdb_file,
+            protein_rotate = args.protein_rotate.split(',') if args.protein_rotate else None,
+            protein_color = _color_to_tuple(args.protein_color),
+            protein_zoom = args.protein_zoom,
+            hetatm_color = _color_to_tuple(args.hetatm_color),
+            ligand_id = args.ligand_id,
+            ligand_chain = args.ligand_chain,
+            ligand_zoom = args.ligand_zoom,
+            ligand_color = _color_to_tuple(args.ligand_color),
+            show_water = args.show_water,
+            render_style = args.render_style,
+            width = args.width,
+            height = args.height)
