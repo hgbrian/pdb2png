@@ -12,7 +12,7 @@ from pymol import cmd
 RENDER_OPTIONS = {
     "default": {
         "ray_opaque_background": "off",
-        "antialias": 2,
+        "antialias": "2",
         "orthoscopic": "on",
         "depth_cue": "0",
         "ray_trace_mode": "1",
@@ -21,14 +21,14 @@ RENDER_OPTIONS = {
     "default_bw": {
         "bg_color": "white",
         "ray_opaque_background": "on",
-        "antialias": 2,
+        "antialias": "2",
         "orthoscopic": "on",
         "depth_cue": "0",
         "ray_trace_mode": "2",
     },
     "default_cartoon": {
         "ray_opaque_background": "off",
-        "antialias": 2,
+        "antialias": "2",
         "orthoscopic": "on",
         "depth_cue": "0",
         "ray_trace_mode": "3",
@@ -36,17 +36,18 @@ RENDER_OPTIONS = {
     "dark": {
         "bg_color": "black",
         "ray_opaque_background": "on",
-        "antialias": 2,
+        "antialias": "2",
         "orthoscopic": "on",
         "light_count": "2",
         "specular": "1",
-        "depth_cue": "0",
+        "depth_cue": "1",
+        "fog_start": "0.35",
         "ray_trace_mode": "1",
         "ray_trace_color": "black",
     },
     "muted": {
         "bg_color": "white",
-        "valence": 0,
+        "valence": "0",
         "bg_rgb": "white",
         "reflect": "0",
         "spec_direct": "0",
