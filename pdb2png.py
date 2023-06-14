@@ -80,7 +80,10 @@ def apply_render_style(render_style:str) -> None:
     set with cmd.set and seems to have different meanings
     """
 
-    render_style_dict = RENDER_OPTIONS.get(render_style, json.loads(render_style))
+    if render_style in RENDER_OPTIONS:
+        render_style_dict = RENDER_OPTIONS[render_style]
+    else:
+        render_style_dict = json.loads(render_style)
 
     for k, v in render_style_dict.items():
         if k == "bg_color":
