@@ -20,6 +20,7 @@ RENDER_OPTIONS = {
     },
     "default_bw": {
         "bg_color": "white",
+        "ray_opaque_background": "on",
         "antialias": 2,
         "orthoscopic": "on",
         "depth_cue": "0",
