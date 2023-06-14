@@ -37,6 +37,11 @@ python pdb2png.py 8G0Z.pdb
 ```
 <img src="examples/8G0Z_default.png" width="500px" height="500px" />
 
+```
+python pdb2png.py 8G0Z.pdb --render_style muted
+```
+<img src="examples/8G0Z_muted.png" width="500px" height="500px" />
+
 
 ### Example PDB files
 ```
