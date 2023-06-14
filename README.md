@@ -5,12 +5,14 @@ One dependency:
 mamba install -c conda-forge pymol-open-source
 ```
 
-## Example PDB file:
+## Examples
+
+### Get PDB file:
 ```
 curl -O https://files.rcsb.org/download/4O75.pdb
 ```
 
-## Example pngs
+### Images:
 ```
 python pdb2png.py 4O75.pdb
 ```
