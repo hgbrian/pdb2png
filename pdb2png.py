@@ -20,7 +20,6 @@ RENDER_OPTIONS = {
     },
     "default_bw": {
         "bg_color": "white",
-        "ray_opaque_background": "off",
         "antialias": 2,
         "orthoscopic": "on",
         "depth_cue": "0",
@@ -109,10 +108,11 @@ def pdb2png(pdb_file:str,
     Input is a pdb file.
     Output is a png file.
     """
+    # reinitialize is important if you call the function multiple times!
     cmd.reinitialize()
 
     cmd.load(pdb_file)
-    cmd.orient() # needed??
+    cmd.orient() # maybe not needed
 
     if protein_rotate is not None:
         cmd.rotate("x", protein_rotate[0])
