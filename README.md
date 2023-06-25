@@ -8,6 +8,8 @@ mamba install -c conda-forge pymol-open-source
 ## Colab demo
 
 <a target="_blank" href="https://colab.research.google.com/github/https://colab.research.google.com/drive/1yLs8827nWu1_NYjkSx1ulBif3Xdni50N">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 ## Examples
 
