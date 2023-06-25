@@ -5,6 +5,10 @@ One dependency:
 mamba install -c conda-forge pymol-open-source
 ```
 
+## Colab demo
+
+https://colab.research.google.com/drive/1yLs8827nWu1_NYjkSx1ulBif3Xdni50N
+
 ## Examples
 
 ```
